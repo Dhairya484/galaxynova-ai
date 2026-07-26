@@ -1,0 +1,22 @@
+{
+  "name": "gemini-ai-chat",
+  "version": "1.0.0",
+  "description": "Gemini AI Chat Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "gemini",
+    "ai",
+    "chat"
+  ],
+  "author": "Sanjay",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^1.15.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2"
+  }
+}
