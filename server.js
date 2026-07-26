@@ -41,7 +41,7 @@ app.post("/chat", async (req, res) => {
 
         const response = await ai.models.generateContent({
 
-            model: "gemini-flash-latest",
+            model: "gemini-2.5-flash-lite"
 
             contents
 
