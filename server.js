@@ -14,6 +14,12 @@ const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY
 });
 
+// DEBUG
+console.log("====================================");
+console.log("API Key exists:", !!process.env.GEMINI_API_KEY);
+console.log("API Key prefix:", process.env.GEMINI_API_KEY?.substring(0, 5));
+console.log("====================================");
+
 // ======================
 // CHAT
 // ======================
