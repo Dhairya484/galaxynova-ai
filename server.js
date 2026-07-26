@@ -53,13 +53,17 @@ app.post("/chat", async (req, res) => {
 
     } catch (err) {
 
-        console.error(err);
+    console.error("========== FULL ERROR ==========");
+    console.error(err);
+    console.error("Stack:");
+    console.error(err.stack);
+    console.error("================================");
 
-        res.status(500).json({
-            reply: err.message
-        });
+    res.status(500).json({
+        reply: err.message
+    });
 
-    }
+}
 
 });
 
