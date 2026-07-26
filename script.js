@@ -3,6 +3,8 @@ const prompt = document.getElementById("prompt");
 const send = document.getElementById("send");
 const imageBtn = document.getElementById("imageBtn");
 const newChat = document.getElementById("newChat");
+const uploadBtn = document.getElementById("uploadBtn");
+const analyzeBtn = document.getElementById("analyzeBtn");
 
 let history = [];
 
