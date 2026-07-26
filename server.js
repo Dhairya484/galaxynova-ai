@@ -41,7 +41,7 @@ app.post("/chat", async (req, res) => {
 
         const response = await ai.models.generateContent({
 
-            model: "model/gemma-4-26b-4ab-it"
+            model: "model/gemma-4-26b-4ab-it",
 
             contents
 
