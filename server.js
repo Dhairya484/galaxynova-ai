@@ -312,25 +312,35 @@ app.post("/analyze-image", async (req, res) => {
 
 app.get("/models", async (req, res) => {
 
-    try {
+    let lastError = null;
 
-        const models = await clients[0].models.list();
+    for (let i = 0; i < clients.length; i++) {
 
-        res.json(models);
+        try {
+
+            console.log(`🔑 Listing models with API Key ${i + 1}`);
+
+            const models = await clients[i].models.list();
+
+            return res.json(models);
+
+        }
+
+        catch (err) {
+
+            lastError = err;
+
+            console.log(`⚠️ API Key ${i + 1} failed while listing models.`);
+
+        }
 
     }
 
-    catch (err) {
+    res.status(500).json({
 
-        console.error(err);
+        error: lastError?.message || "Unable to list models."
 
-        res.status(500).json({
-
-            error: err.message
-
-        });
-
-    }
+    });
 
 });
 
